@@ -1,0 +1,12 @@
+@import "tailwindcss";
+
+@theme {
+    --font-sans: 'Inter Variable', 'sans-serif';
+    --font-serif: 'Platypi Variable', 'serif';
+    --color-desk-gray-300: oklch(91.8% 0.005 176.9);
+    --color-desk-gray-500: oklch(78.6% 0.012 234.4);
+    --color-desk-gray-700: oklch(26.8% 0.008 259.4);
+    --color-desk-blue: oklch(47.7% 0.169 264.8);
+    --color-desk-brown: oklch(34.4% 0.048 45.7);
+    --color-desk-orange: oklch(68.7% 0.199 52.5);
+}
