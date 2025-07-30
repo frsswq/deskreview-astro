@@ -1,5 +1,6 @@
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import { useState } from "react";
+import Logo from "../image/svg/logo_full_navbar.svg?react";
 
 export default function Navbar() {
   const { scrollY } = useScroll();
@@ -26,9 +27,7 @@ export default function Navbar() {
     >
       <div className="flex h-full w-full max-w-[1440px] items-center justify-between px-15 py-5">
         <a href="/" className="flex h-full hover:cursor-pointer">
-          <img
-            src="../image/svg/logo_full_navbar.svg"
-            alt="Deskreview Logo"
+          <Logo
             width="201"
             height="36"
             className="-mt-1 h-full object-contain"
