@@ -1,5 +1,29 @@
 ---
-
+import { Image } from "astro:assets";
+import logoDeskreview from "../image/svg/logo_full_navbar.svg";
 ---
 
-<nav class="sticky min-h-[100px] h-full border border-b-slate-300"></nav>
+<nav
+  class="sticky max-h-[80px] h-full border border-b-slate-300 px-15 py-5 flex justify-between items-center top-0 bg-white z-100"
+>
+  <Image src={logoDeskreview} alt="Deskreview Logo" width="200" height="48" />
+  <div
+    class="flex gap-x-10 text-lg font-sans font-[350] tracking-[-0.01em] items-center"
+  >
+    <a
+      href="/"
+      class="hover:cursor-pointer hover:text-desk-blue/90 hover:underline transition"
+      >About</a
+    >
+    <a
+      href="project"
+      class="hover:cursor-pointer hover:text-desk-blue/90 hover:underline transition"
+      >Project</a
+    >
+    <a
+      href="study"
+      class="hover:cursor-pointer hover:text-desk-blue/90 hover:underline transition"
+      >Study</a
+    >
+  </div>
+</nav>
