@@ -4,26 +4,46 @@ import logoDeskreview from "../image/svg/logo_full_navbar.svg";
 ---
 
 <nav
-  class="sticky max-h-[80px] h-full border border-b-slate-300 px-15 py-5 flex justify-between items-center top-0 bg-white z-100"
+  class="sticky max-h-[80px] border border-transparent border-b-slate-300 flex justify-center top-0 bg-white z-100 transition"
 >
-  <Image src={logoDeskreview} alt="Deskreview Logo" width="200" height="48" />
   <div
-    class="flex gap-x-10 text-lg font-sans font-[350] tracking-[-0.01em] items-center"
+    class="max-w-[1440px] h-full w-full flex justify-between items-center px-15 py-5"
   >
-    <a
-      href="/"
-      class="hover:cursor-pointer hover:text-desk-blue/90 hover:underline transition"
-      >About</a
+    <a href="/" class="hover:cursor-pointer flex h-full">
+      <Image
+        src={logoDeskreview}
+        alt="Deskreview Logo"
+        width="201"
+        height="36"
+        class="h-full object-contain -mt-1"
+      />
+    </a>
+    <div
+      class="flex gap-x-10 text-lg font-sans font-[350] tracking-[-0.01em] items-center leading-none"
     >
-    <a
-      href="project"
-      class="hover:cursor-pointer hover:text-desk-blue/90 hover:underline transition"
-      >Project</a
-    >
-    <a
-      href="study"
-      class="hover:cursor-pointer hover:text-desk-blue/90 hover:underline transition"
-      >Study</a
-    >
+      <a
+        href="/"
+        class="hover:cursor-pointer hover:text-desk-blue/90 hover:underline transition"
+        >About</a
+      >
+      <a
+        href="/work"
+        class="hover:cursor-pointer hover:text-desk-blue/90 hover:underline transition"
+        >Work</a
+      >
+      <a
+        href="/study"
+        class="hover:cursor-pointer hover:text-desk-blue/90 hover:underline transition"
+        >Study</a
+      >
+    </div>
   </div>
 </nav>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.querySelector("nav");
+    let lastScrollY = window.scrollY;
+    let ticking = false;
+  });
+</script>

@@ -1,6 +1,8 @@
 ---
 import "@fontsource-variable/inter";
 import "@fontsource-variable/platypi";
+import ContactUs from "../components/home/contact-us.astro";
+import Manifesto from "../components/home/manifesto.astro";
 import Services from "../components/home/services.astro";
 import Layout from "../layouts/Layout.astro";
 import "../styles/global.css";
@@ -9,9 +11,9 @@ import "../styles/global.css";
 <Layout>
   <div class="min-h-screen flex justify-center">
     <div class="px-15 flex-col max-w-[1440px] py-20 flex w-full justify-center">
-      <section></section>
+      <Manifesto />
       <Services />
-      <section></section>
+      <ContactUs />
     </div>
   </div>
 </Layout>
