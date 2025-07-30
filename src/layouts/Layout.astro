@@ -1,6 +1,6 @@
 ---
 import Footer from "../components/footer.astro";
-import Navbar from "../components/navbar.astro";
+import Navbar from "../components/navbar-react";
 ---
 
 <!doctype html>
@@ -33,11 +33,13 @@ import Navbar from "../components/navbar.astro";
   </head>
   <body>
     <div class="root antialiased">
-      <Navbar />
+      <Navbar client:load />
       <slot />
       <Footer />
     </div>
   </body>
+  <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"
+  ></script>
 </html>
 
 <style>
