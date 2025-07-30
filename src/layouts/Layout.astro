@@ -1,6 +1,7 @@
 ---
 import Footer from "../components/footer.astro";
 import Navbar from "../components/navbar-react";
+import PageProgress from "../components/page-progress";
 ---
 
 <!doctype html>
@@ -33,6 +34,7 @@ import Navbar from "../components/navbar-react";
   </head>
   <body>
     <div class="root antialiased">
+      <PageProgress client:load />
       <Navbar client:load />
       <slot />
       <Footer />
@@ -48,6 +50,7 @@ import Navbar from "../components/navbar-react";
     margin: 0;
     width: 100%;
     height: 100%;
+    background-color: white;
     font-family: "Inter", sans-serif;
     font-feature-settings:
       "liga" 1,

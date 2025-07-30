@@ -6,6 +6,7 @@ Static site for deskreview creative agency. Built with ❤️ using Astro & Reac
 
 - [Astro](https://astro.build/) [ Static Site Generator ]
 - [React](https://react.dev/) [ UI Library ]
+- [Motion](https://motion.dev/) [ Animation ]
 - [Base UI](https://base-ui.com/) [ Unstyled UI Components ]
 - [Tailwind](https://tailwindcss.com/) [ CSS Framework ]
 - [Fontsource](https://fontsource.org/) [ Self-hosted Fonts ]
