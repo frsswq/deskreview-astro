@@ -42,7 +42,7 @@ export default function Navbar() {
         animate={[hidden ? "hidden" : "visible"]}
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className={cn(
-          `sticky top-0 z-10 flex min-h-[72px] w-full items-center overflow-hidden border
+          `sticky top-0 z-11 flex min-h-[72px] w-full items-center overflow-hidden border
           border-transparent border-b-slate-300 bg-white`,
           isOpen ? "border-b-transparent" : ""
         )}

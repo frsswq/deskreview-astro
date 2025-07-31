@@ -14,36 +14,39 @@ export default function MenuPopover({ isOpen, setIsOpen }: MenuPopoverProps) {
     <Popover open={isOpen} onOpenChange={setIsOpen}>
       <PopoverTrigger asChild className="md:hidden">
         <Button
-          className="justify-centerbg-white relative flex h-10 w-6 items-center bg-transparent p-0
-            pr-1 shadow-none hover:cursor-pointer"
+          className="relative flex h-10 w-8 items-center justify-center bg-transparent p-0
+            shadow-none hover:cursor-pointer"
         >
           <span
             className={cn(
-              "absolute top-[37.5%] h-0.5 w-6 rounded-full bg-gray-700 transition-transform",
-              isOpen ? "top-[50%] rotate-45" : "rotate-0"
+              `relative size-8 items-center justify-center overflow-hidden border border-black
+              bg-transparent`
             )}
-          />
-          <span
-            className={cn(
-              "absolute top-[62.5%] h-0.5 w-6 rounded-full bg-gray-700 transition-transform",
-              isOpen ? "top-[50%] -rotate-45" : "rotate-0"
-            )}
-          />
+          >
+            <span
+              className={cn(
+                "absolute top-1/2 left-1/2 size-8 -translate-1/2 bg-black transition-transform",
+                isOpen ? "translate-y-[-100%]" : "translate-y-[-200%]"
+              )}
+            />
+          </span>
         </Button>
       </PopoverTrigger>
-      <PopoverContent
-        className="z-10 h-dvh w-dvw bg-white"
-        onInteractOutside={() => setIsOpen(false)}
-        onEscapeKeyDown={() => setIsOpen(false)}
-      >
-        <div className="flex h-full flex-col justify-center gap-y-5 px-5 font-sans text-4xl">
-          <a href="/" className="hover:cursor-pointer">
+      <PopoverContent className={cn("z-10 h-dvh w-dvw")} onEscapeKeyDown={() => setIsOpen(false)}>
+        <div
+          className={cn(
+            `mt-10 flex h-full flex-col gap-y-5 px-5 font-serif text-3xl leading-none
+            font-extralight transition-colors`,
+            isOpen ? "bg-white" : "bg-transparent"
+          )}
+        >
+          <a href="/" className="w-fit whitespace-nowrap hover:cursor-pointer">
             About
           </a>
-          <a href="/work" className="hover:cursor-pointer">
+          <a href="/work" className="w-fit whitespace-nowrap hover:cursor-pointer">
             Work
           </a>
-          <a href="/study" className="hover:cursor-pointer">
+          <a href="/study" className="w-fit whitespace-nowrap hover:cursor-pointer">
             Study
           </a>
         </div>
