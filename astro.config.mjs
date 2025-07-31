@@ -9,6 +9,8 @@ export default defineConfig({
   integrations: [react()],
 
   vite: {
-    plugins: [tailwindcss(), svgr()]
+    plugins: [tailwindcss(), svgr({
+      include: '**/*.svg?react'
+    })]
   }
 });
