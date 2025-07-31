@@ -10,17 +10,20 @@ interface MenuPopoverProps {
 
 export default function MenuPopover({ isOpen, setIsOpen }: MenuPopoverProps) {
   return (
-    <Popover>
+    <Popover open={isOpen} onOpenChange={setIsOpen}>
       <PopoverTrigger asChild className="md:hidden">
         <Button
           className="relative flex h-10 w-8 items-center justify-center bg-white p-0 shadow-none
             hover:cursor-pointer"
-          onClick={() => setIsOpen((prev) => !prev)}
         >
           <HamburgerIcon />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="z-10 h-dvh w-dvw bg-white">
+      <PopoverContent
+        className="z-10 h-dvh w-dvw bg-white"
+        onInteractOutside={() => setIsOpen(false)}
+        onEscapeKeyDown={() => setIsOpen(false)}
+      >
         <div className="flex h-full flex-col justify-center gap-y-5 px-5 font-sans text-4xl">
           <a href="/" className="hover:cursor-pointer">
             About
