@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { PopoverContent, PopoverTrigger } from "@radix-ui/react-popover";
 import type React from "react";
 import { Button } from "./ui/button";
@@ -13,10 +14,21 @@ export default function MenuPopover({ isOpen, setIsOpen }: MenuPopoverProps) {
     <Popover open={isOpen} onOpenChange={setIsOpen}>
       <PopoverTrigger asChild className="md:hidden">
         <Button
-          className="relative flex h-10 w-8 items-center justify-center bg-white p-0 shadow-none
+          className="relative flex h-10 w-6 items-center justify-center bg-white p-0 shadow-none
             hover:cursor-pointer"
         >
-          <HamburgerIcon />
+          <span
+            className={cn(
+              "absolute top-[37.5%] h-0.75 w-6 rounded-full bg-gray-700 transition-transform",
+              isOpen ? "top-[50%] rotate-45" : "rotate-0"
+            )}
+          />
+          <span
+            className={cn(
+              "absolute top-[62.5%] h-0.75 w-6 rounded-full bg-gray-700 transition-transform",
+              isOpen ? "top-[50%] -rotate-45" : "rotate-0"
+            )}
+          />
         </Button>
       </PopoverTrigger>
       <PopoverContent
@@ -37,14 +49,5 @@ export default function MenuPopover({ isOpen, setIsOpen }: MenuPopoverProps) {
         </div>
       </PopoverContent>
     </Popover>
-  );
-}
-
-function HamburgerIcon() {
-  return (
-    <>
-      <span className="absolute top-[37.5%] h-0.75 w-8 rounded-full bg-gray-700" />
-      <span className="absolute top-[62.5%] h-0.75 w-8 rounded-full bg-gray-700" />
-    </>
   );
 }
