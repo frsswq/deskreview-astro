@@ -14,19 +14,20 @@ export default function MenuPopover({ isOpen, setIsOpen }: MenuPopoverProps) {
     <Popover open={isOpen} onOpenChange={setIsOpen}>
       <PopoverTrigger asChild className="md:hidden">
         <Button
-          className="relative flex h-10 w-8 items-center justify-center bg-transparent p-0
+          className="relative flex h-10 w-8.5 items-end justify-center bg-transparent p-0
             shadow-none hover:cursor-pointer"
         >
           <span
             className={cn(
-              `relative size-8 items-center justify-center overflow-hidden border border-black
-              bg-transparent`
+              `relative size-8.5 items-center justify-center overflow-hidden rounded-full
+              border-[1.75px] border-white ring-[0.75px] ring-black`
             )}
           >
             <span
               className={cn(
-                "absolute top-1/2 left-1/2 size-8 -translate-1/2 bg-black transition-transform",
-                isOpen ? "translate-y-[-100%]" : "translate-y-[-200%]"
+                `bg-desk-gray-700 absolute top-1/2 left-1/2 size-8.5 -translate-1/2
+                transition-transform`,
+                isOpen ? "translate-y-[-50%]" : "translate-y-[-150%]"
               )}
             />
           </span>
